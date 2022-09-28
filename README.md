@@ -2,9 +2,9 @@
 Code and data for 'Scaling Laws for a Multi-Agent Reinforcement Learning Model'.
 
 ## Prerequisites
-The code was run with Python (version 3.6.8) using open-spiel (version 1.0.0) tensorflow (version 2.6.0).
+The code should be run with Python (version 3.6.8) using open-spiel (version 1.0.0) and tensorflow (version 2.6.0).
 
-In order to run Connect Four matches against a solver, you must download the open source solver package seperately. See `solver_bot.py` documentation for detailed instructions.
+In order to run Connect Four matches against a solver, you must download the open source [solver package](https://github.com/PascalPons/connect4/tree/book) seperately. See `solver_bot.py` documentation for detailed instructions.
 
 In order to calculate Elo scores, you must download the open source program [BayesElo](https://www.remi-coulom.fr/Bayesian-Elo/).
 
@@ -16,6 +16,12 @@ There are two main codes needed to generate the match data required in order to 
 - `matches_self_checkpoint.py` is used to run matches on an agent slice, running games between all pairs of checkpoints of a single agent.
 
 The Elo scores presented in the paper can be replicated by running matches on all training slices and all agent slices, then feeding all match results to BayesElo. We matched every player pair for 800 games.
+
+To generate Elo scores relative to the game solver benchmarks, you should use `matches_solver.py`. Instructions on how to set up the solvers is provided in `solver_bot.py` and `pentago_solver.py`, where the solver players are implemented. The resulting matches vector should be fed to BayesElo.
+
+FLOPs counts for all models were generated with `get_flops.py`.
+
+The main part of the code, where we implemented all functionalities missing in OpenSpiel, is found in `AZ_helper_lib.py`.
 
 ## Data
 All models trained on Connect Four and Pentago are available in an individual release.
