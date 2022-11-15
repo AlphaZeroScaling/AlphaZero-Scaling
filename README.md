@@ -23,6 +23,8 @@ FLOPs counts for all models were generated with `get_flops.py`.
 
 The main part of the code, where we implemented all functionalities missing in OpenSpiel, is found in `AZ_helper_lib.py`.
 
+`solver_on_solver.py` can be used to run matches between Connect Four solver agents with different temperatures (used in appendix C).
+
 ## Data
 All models trained on Connect Four and Pentago are available in an individual release.
 Each agent folder contains all checkpoints used to generate the plots in the paper.
