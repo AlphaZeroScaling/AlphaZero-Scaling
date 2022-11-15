@@ -19,7 +19,7 @@ import utils
 # Specify the game:
 game = 'pentago'
 # Optional: specify solver temperature if using Connect Four.
-temperature = 0
+temperature = None
 # Save all logs to:
 path_logs = '/path/to/logs/directory/' + game + '_solver/'
 # Create the directory, then copy a config.json file into it: (otherwise crashes)
